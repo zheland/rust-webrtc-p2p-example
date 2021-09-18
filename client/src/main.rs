@@ -14,24 +14,6 @@
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc<'_> = wee_alloc::WeeAlloc::INIT;
 
-//mod child;
-//mod log;
-//mod model;
-//mod receiver;
-//mod sender;
-//mod server;
-//
-//pub use child::Child;
-//pub use log::{log_error, log_info};
-//pub use model::Model;
-//pub use receiver::ReceiverNode;
-//pub use sender::SenderNode;
-//pub use server::ServerComponent;
-//
-//fn main() {
-//    yew::start_app::<Model>();
-//}
-
 mod app;
 mod receiver;
 mod receiver_builder;
