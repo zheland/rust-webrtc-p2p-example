@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video capture and streaming</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link data-trunk rel="inline" href="target/server_address.js" />
+
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+      }
+      .component {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 8px;
+        margin: 2px;
+        overflow: auto;
+        resize: both;
+      }
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+      .close {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+      .video {
+        box-sizing: content-box;
+        border: 1px solid black;
+        padding: 8px;
+        margin: 2px;
+        width: 256px;
+        height: 144px;
+        overflow: hidden;
+        resize: both;
+      }
+      .video video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .loading {
+        color: #808080;
+      }
+      .error {
+        color: #800000;
+        text-align: left;
+        font-size: 12px;
+        font-family: Inconsolata, monospace;
+        width: 256px;
+        height: 64px;
+      }
+      .monospace {
+        font-family: Inconsolata, monospace;
+      }
+      button {
+        font-size: 16px;
+        margin: 4px;
+        background-color: #333;
+        border: solid 2px #333;
+        color: #fff;
+        transition: color 0.2s, background-color 0.2s;
+      }
+      button:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      input {
+        font-family: Inconsolata, monospace;
+      }
+      input[type="text"] {
+        width: 164px;
+      }
+      input[readonly],
+      textarea[readonly] {
+        background-color: #eee;
+      }
+      label {
+        user-select: none;
+      }
+      /*.resizable {
+        box-sizing: content-box;
+        border: 1px solid black;
+        overflow: auto;
+        resize: both;
+        width: 256px;
+        height: auto;
+      }
+      input.number {
+        width: 48px;
+        text-align: center;
+      }
+      input.number {
+        width: 48px;
+      }
+      video {
+        max-width: 100%;
+        max-height: 100%;
+      }*/
+      /*label {
+        display: inline-block;
+        width: 128px;
+        text-align: right;
+      }*/
+    </style>
+  </head>
+</html>
