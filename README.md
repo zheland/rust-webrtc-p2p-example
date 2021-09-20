@@ -16,8 +16,10 @@ WebRTC communication itself does not work yet.
 - [x] WebAssemply client Reactive UI,
 - [x] Messaging through the signaling server,
 - [x] Client-To-Client offer, answer, ice-candidates exchange,
-- [ ] Client-To-Client ICE-connection,
-- [ ] Client-To-Client WebRTC-connection,
+- [x] Client-To-Client ICE-connection,
+- [x] Client-To-Client WebRTC-connection,
+- [x] Client-To-Client video sending and receiving,
+- [ ] Client-To-Client binary sending and receiving,
 - [ ] Client-To-Server-To-Client WebRTC comminication,
 
 ## Setup

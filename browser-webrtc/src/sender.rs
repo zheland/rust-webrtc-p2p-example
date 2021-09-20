@@ -409,7 +409,7 @@ impl Sender {
         use wasm_bindgen_futures::JsFuture;
         use web_sys::{RtcSdpType, RtcSessionDescriptionInit};
 
-        let mut remote_description = RtcSessionDescriptionInit::new(RtcSdpType::Offer);
+        let mut remote_description = RtcSessionDescriptionInit::new(RtcSdpType::Answer);
         let _: &mut _ = remote_description.sdp(&remote_sdp.0);
 
         let _: JsValue = JsFuture::from(
