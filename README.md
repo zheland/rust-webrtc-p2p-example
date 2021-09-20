@@ -27,6 +27,10 @@ Demo includes a WebRTC-client written in rust using the sycamore library and a s
 ## Usage
 
 * Run `bash watch.sh`
+* Open `localhost:8080` in browser
+* Edit the server address if necessary and click button `[Join server]`.
+* Click button `[Open channel]` to start sending video and text using the specified signaling server for the specified channel.
+* Click button `[Join channel CHANNELNAME]` to start receiving video and text from the specified channel.
 
 ## License
 
