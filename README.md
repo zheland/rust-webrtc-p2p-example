@@ -2,11 +2,9 @@
 
 ## About
 
-Work in progress demo includes a WebRTC-client written in rust using the sycamore library and a signal and WebRTC-server.
+Demo includes a WebRTC-client written in rust using the sycamore library and a signal and WebRTC-server.
 
 ## State
-
-WebRTC communication itself does not work yet.
 
 - [x] Signaling protocol,
 - [x] WebSocket signaling server,
@@ -15,11 +13,11 @@ WebRTC communication itself does not work yet.
 - [x] Multiple senders and receivers per one client,
 - [x] WebAssemply client Reactive UI,
 - [x] Messaging through the signaling server,
-- [x] Client-To-Client offer, answer, ice-candidates exchange,
-- [x] Client-To-Client ICE-connection,
+- [x] Client Sender PeerToPeer mode
+- [ ] Client Sender ClientServer mode
 - [x] Client-To-Client WebRTC-connection,
 - [x] Client-To-Client video sending and receiving,
-- [ ] Client-To-Client binary sending and receiving,
+- [x] Client-To-Client binary sending and receiving,
 - [ ] Client-To-Server-To-Client WebRTC comminication,
 
 ## Setup

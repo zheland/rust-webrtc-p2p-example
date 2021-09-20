@@ -46,6 +46,10 @@ impl DataReceiver {
     ) -> Arc<Self> {
         log::trace!("browser_webrtc::DataReceiver::new");
 
+        use web_sys::RtcDataChannelType;
+
+        js_channel.set_binary_type(RtcDataChannelType::Arraybuffer);
+
         let data_channel = Arc::new(Self {
             receiver,
             handler: BoxAsyncFn2Wrapper(handler),

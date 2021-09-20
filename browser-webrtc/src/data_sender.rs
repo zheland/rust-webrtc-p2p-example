@@ -26,10 +26,7 @@ impl DataSender {
     ) -> Arc<Self> {
         log::trace!("browser_webrtc::DataSender::new");
 
-        use web_sys::RtcDataChannelType;
-
         let js_channel = js_connection.create_data_channel(name.as_ref());
-        js_channel.set_binary_type(RtcDataChannelType::Arraybuffer);
 
         let data_channel = Arc::new(Self {
             sender,

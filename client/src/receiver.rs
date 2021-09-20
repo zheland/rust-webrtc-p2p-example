@@ -13,7 +13,7 @@ pub struct ReceiverView {
     media_receivers_var: Signal<RefCell<Vec<Arc<MediaReceiver>>>>,
     media_views_var: Signal<RefCell<Vec<Arc<MediaView>>>>,
     data_receivers_var: Signal<RefCell<Vec<Arc<DataReceiver>>>>,
-    web_binary_data_var: Signal<String>,
+    webrtc_binary_data_var: Signal<String>,
     socket_binary_data_var: Signal<String>,
 }
 
@@ -24,7 +24,7 @@ impl ReceiverView {
         let media_receivers_var = Signal::new(RefCell::new(Vec::new()));
         let media_views_var = Signal::new(RefCell::new(Vec::new()));
         let data_receivers_var = Signal::new(RefCell::new(Vec::new()));
-        let web_binary_data_var = Signal::new(String::new());
+        let webrtc_binary_data_var = Signal::new(String::new());
         let socket_binary_data_var = Signal::new(String::new());
 
         Arc::new(Self {
@@ -32,7 +32,7 @@ impl ReceiverView {
             media_receivers_var,
             media_views_var,
             data_receivers_var,
-            web_binary_data_var,
+            webrtc_binary_data_var,
             socket_binary_data_var,
         })
     }
@@ -98,16 +98,19 @@ impl ReceiverView {
     }
 
     pub async fn on_data_receiver_event(self: &Arc<Self>, ev: DataReceiverEvent) {
-        use log::{debug, error};
+        use log::error;
         match ev {
+            DataReceiverEvent::Message(data) => {
+                self.webrtc_binary_data_var
+                    .set(String::from_utf8_lossy(&data).to_string());
+            }
             DataReceiverEvent::Error(err) => error!("{}", err),
-            ev => debug!("{:?}", ev),
         }
     }
 
     pub fn view(self: &Arc<Self>) -> Template<DomNode> {
         let media_views_var = self.media_views_var.clone();
-        let web_binary_data_var = self.web_binary_data_var.clone();
+        let webrtc_binary_data_var = self.webrtc_binary_data_var.clone();
         let socket_binary_data_var = self.socket_binary_data_var.clone();
 
         template! {
@@ -138,7 +141,7 @@ impl ReceiverView {
                         ("WebRtc DataChannel")
                     }
                     textarea(readonly = true) {
-                        (web_binary_data_var.get())
+                        (webrtc_binary_data_var.get())
                     }
                 }
             }
