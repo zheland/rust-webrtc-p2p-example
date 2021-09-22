@@ -1,8 +1,13 @@
-# rust-wasm-client-and-server-webrtc-demo (WIP)
+# Rust WebRTC P2P example
 
 ## About
 
-Demo includes a WebRTC-client written in rust using the sycamore library and a signal and WebRTC-server.
+Example includes a WebRTC-client written in rust using the sycamore library and a signal and WebRTC-server.
+
+This example is still incomplete and contains fairly dirty and duplicated code.
+A clean and readable example of communication between
+a WebRTC client using web-sys and a WebRTC server using webrtc-rs
+can be found in the repository: https://github.com/zheland/rust-webrtc-client-server-example
 
 ## State
 
